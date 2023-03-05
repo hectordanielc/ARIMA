@@ -1,7 +1,7 @@
 <h1 align="center">Hola soy Héctor Castro</h1>
 <h3 align="center">Un joven apasionado por las finanzas y la tecnología</h3>
 
-- 🔭 Actualmente me encuentro trabajando en **Modelo ARIMA**
+- 🔭 En este proyecto me encuentro trabajando en un **Modelo ARIMA** , cabe destacar que solo Python sería suficiente para esto pero me gusta integrar otros métodos para practicar.
 
 - 👨‍💻 Todos mis proyectos públicos se en encuentra en [https://github.com/hectordanielc?tab=repositories](https://github.com/hectordanielc?tab=repositories)
 
