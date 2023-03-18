@@ -1,0 +1,81 @@
+/*--------------------MAIN----------------------*/
+
+.full-page{
+    display: flex;
+    nav{
+        width:15%;
+        background-color: $color-principal;
+        height: 100vh;
+        position: fixed;
+        div{
+            @extend %verticalFlex;
+            margin-top: 50px;
+            color: $color-secundario;
+            img{
+                width: 100%;
+                clip-path: circle();
+            }
+        }
+    }
+    main{
+        .main-section{
+            margin-left: 15%;
+            .titulo{
+                @extend %verticalFlex;
+                background-color: $color-principal;
+                height: 10vh;
+                margin: 10px;
+                border-radius: 10px;
+                h1{
+                    color: $color-secundario;
+                }
+            }
+            .desarrollo{
+                @extend %verticalFlex;
+                padding: 50px;
+                p{
+                    font-size: nth($font-size,3);
+                }
+                .imagenes-vertical{
+                    @extend %verticalFlex;
+                    margin: 10px;
+                    height: auto;
+                    text-align: center;
+                    .vimagen1{
+                        width: auto;
+                        height: 100%;
+                        img{
+                            width: 100%;
+                            // height: 90%;
+                        }
+                    }
+                    .vimagen2{
+                        width: auto;
+                        height: 100%;
+                        img{
+                            width: 100%;
+                            // height: 90%;
+                        }
+                    }
+                }
+                .imagenes-horizontal{
+                    width: 100%;
+                    height: 300px;
+                    display: flex;
+                    justify-content: space-around;
+                    .himagen1{
+                        width: 45%;
+                        @extend %verticalFlex;
+                    }
+                    .himagen2{
+                        width: 45%;
+                        @extend %verticalFlex;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+

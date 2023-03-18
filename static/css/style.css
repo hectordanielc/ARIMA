@@ -1,0 +1,67 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+/*Variables*/
+/*Listas*/
+/*Tamaño Utilizado en los Parrafos*/
+/*Extend*/
+.full-page nav div, .full-page main .main-section .titulo, .full-page main .main-section .desarrollo, .full-page main .main-section .desarrollo .imagenes-vertical, .full-page main .main-section .desarrollo .imagenes-horizontal .himagen1, .full-page main .main-section .desarrollo .imagenes-horizontal .himagen2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; }
+
+/*Mixins*/
+/*--------------------MAIN----------------------*/
+.full-page {
+  display: flex; }
+  .full-page nav {
+    width: 15%;
+    background-color: #092e4b;
+    height: 100vh;
+    position: fixed; }
+    .full-page nav div {
+      margin-top: 50px;
+      color: white; }
+      .full-page nav div img {
+        width: 100%;
+        clip-path: circle(); }
+  .full-page main .main-section {
+    margin-left: 15%; }
+    .full-page main .main-section .titulo {
+      background-color: #092e4b;
+      height: 10vh;
+      margin: 10px;
+      border-radius: 10px; }
+      .full-page main .main-section .titulo h1 {
+        color: white; }
+    .full-page main .main-section .desarrollo {
+      padding: 50px; }
+      .full-page main .main-section .desarrollo p {
+        font-size: 30px; }
+      .full-page main .main-section .desarrollo .imagenes-vertical {
+        margin: 10px;
+        height: auto;
+        text-align: center; }
+        .full-page main .main-section .desarrollo .imagenes-vertical .vimagen1 {
+          width: auto;
+          height: 100%; }
+          .full-page main .main-section .desarrollo .imagenes-vertical .vimagen1 img {
+            width: 100%; }
+        .full-page main .main-section .desarrollo .imagenes-vertical .vimagen2 {
+          width: auto;
+          height: 100%; }
+          .full-page main .main-section .desarrollo .imagenes-vertical .vimagen2 img {
+            width: 100%; }
+      .full-page main .main-section .desarrollo .imagenes-horizontal {
+        width: 100%;
+        height: 300px;
+        display: flex;
+        justify-content: space-around; }
+        .full-page main .main-section .desarrollo .imagenes-horizontal .himagen1 {
+          width: 45%; }
+        .full-page main .main-section .desarrollo .imagenes-horizontal .himagen2 {
+          width: 45%; }

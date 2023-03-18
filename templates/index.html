@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='/css/style.css')}}">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="full-page">
+        <nav>
+            <div>
+                <img src="{{url_for('static',filename='/img/hector.jpg')}}" alt="Resultado del Código">
+            </div>
+            <div>
+                <h2>Héctor Castro</h2>
+            </div>
+        </nav>
+        <main>
+            <section class="main-section">
+                <div class="titulo">
+                    <h1>Método Clásico de Descomposición de Serie Temporal</h1>
+                </div>
+                <div class="desarrollo">
+                    <p>
+                        Una descomposición de serie temporal es un método estadístico utilizado para separar una serie
+                        de tiempo en diferentes componentes, con el objetivo de analizar y comprender mejor su
+                        comportamiento y patrones. A continuación estaremos desglosando mediante el Método Clásico de
+                        Descomposición de Series Temporales el Índice Mensual de Actividad Económica (IMAE) de la
+                        República Dominicana.
+                        <br><br>
+                        Al mismo tiempo estaré compartiendo el código de Python utilizado para generar cada una de las
+                        etapas de este análisis. En mis caso la data se estará extrayendo directamente desde la base de
+                        datos de Yunque Capital (firma en que colaboro actualmente) para mayor facilidad en cuanto al
+                        filtrado y preparación de la data, pero la misma puede ser encontrada en el sitio web del Banco
+                        Central de la Rapública Dominicana (link en anexos). Empecemos.
+                    </p>
+                    <div class="imagenes-vertical">
+                        <div class="vimagen1">
+                            <h2>Código</h2>
+                            <img src="{{url_for('static',filename='/img/getdataimae.png')}}" alt="Codigo de Extracción">
+                        </div>
+                        <div class="vimagen2">
+                            <h2>Resultado</h2>
+                            <img src="{{url_for('static',filename='/img/dataimae.png')}}" alt="Resultado del Código">
+                        </div>
+                    </div>
+                    <p>
+                        Una manera eficiente de observar este tipo de variables es separando la leyendo por períodos,
+                        por ejemplo:
+                    </p>
+                    <div class="imagenes-vertical">
+                        <div class="vimagen1">
+                            <h2>Código</h2>
+                            <img src="{{url_for('static',filename='/img/plotcode.png')}}" alt="Codigo de Extracción">
+                        </div>
+                        <div class="vimagen2">
+                            <h2>Resultado</h2>
+                            <img src="{{url_for('static',filename='/img/plotvariable.png')}}"
+                                alt="Resultado del Código">
+                        </div>
+                    </div>
+                    <p>
+                        A diferencia del 2020 (Año del COVID-19) se puede observar un comportamiento similar en en cada
+                        año.
+                        <br><br>
+                        El Método Clásico de Descomposición de Series Temporales se puede modelar con los métodos
+                        Aditivo y Multiplicativo. Para determinar qué modelo utilizar se suelen tomar en cuenta las
+                        siguientes características
+                    </p>
+                    <div class="imagenes-horizontal">
+                        <div class="himagen1">
+                            <h2>Aditivo</h2>
+                            <ul>
+                                <li>
+                                    Model’s form—𝑦𝑦(𝑡𝑡) = level + trend + seasonality + noise
+                                </li>
+                                <li>
+                                    Linear model—changes over time are consistent in size
+                                </li>
+                                <li>
+                                    he trend is linear (straight line)
+                                </li>
+                                <li>
+                                    Linear seasonality with the same frequency (width) and amplitude (height) of cycles over time
+                                </li>
+                                <br>
+                            </ul>
+                        </div>
+                        <div class="himagen2">
+                            <h2>Multiplicativo</h2>
+                            <ul>
+                                <li>
+                                    Model’s form—𝑦(t) = level * trend * seasonality * noise
+                                </li>
+                                <li>
+                                    Non-linear model—changes over time are not consistent in size, for example,
+                                    exponential
+                                </li>
+                                <li>
+                                    A curved, non-linear trend
+                                </li>
+                                <li>
+                                    Non-linear seasonality with increasing/decreasing frequency and amplitude of cycles
+                                    over time
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- <div>
+                            <img src="{{url_for('image')}}" alt="">
+                        </div> -->
+                    </div>
+                    <p>
+                        Para decidir qué metodología tomar, evaluemos la el comportamiento del IMAE en conjunto con una media y una desviación estándar, ambas calculadas en base a los últimos 12 meses.
+                    </p>
+                    <div class="imagenes-vertical">
+                        <div class="vimagen1">
+                            <h2>Código</h2>
+                            <img src="{{url_for('static',filename='/img/imaeSmaStd.png')}}" alt="Codigo de Extracción">
+                        </div>
+                        <div class="vimagen1">
+                            <h2>Resultado</h2>
+                            <img src="{{url_for('image2')}}" alt="Codigo de Extracción">
+                        </div>
+                    </div>
+                    <p>
+                        Obviando el comportamiento del COVID-19 se podrímos concluir que la variable tiene un comportamiento que puede ser analizado con un modelo aditivo. Veamos los resultados.
+                    </p>
+                    <div class="imagenes-vertical">
+                        <div class="vimagen1">
+                            <h2>Código</h2>
+                            <img src="{{url_for('static',filename='/img/resultado-aditivo.png')}}" alt="Codigo de Extracción">
+                        </div>
+                        <div class="vimagen1">
+                            <h2>Resultado</h2>
+                            <img src="{{url_for('image')}}" alt="Codigo de Extracción">
+                        </div>
+                    </div>
+                    <p>
+                        En este cuadro de descomposicion podemos observar por separado cada uno de los componentes: tendencia, estacionalidad y aliatoriedad (residuo). Podemos evaluar si la la descomposicion tiene sentido observando el componente de aliatoriedad. Viendo que no existe ningun patron podriamos concluir que el modelo se ajusta correctamente.
+                    </p>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+
+</html>
