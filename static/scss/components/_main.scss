@@ -41,9 +41,11 @@
                     margin: 10px;
                     height: auto;
                     text-align: center;
+                    margin: 50px 0 50px 0;
                     .vimagen1{
                         width: auto;
                         height: 100%;
+                        margin-bottom: 30px;
                         img{
                             width: 100%;
                             // height: 90%;
@@ -60,16 +62,34 @@
                 }
                 .imagenes-horizontal{
                     width: 100%;
-                    height: 300px;
+                    height: auto;
                     display: flex;
                     justify-content: space-around;
+                    margin: 100px  0 100px 0;
                     .himagen1{
-                        width: 45%;
+                        width: 35%;
                         @extend %verticalFlex;
+                        
+                        ul{
+                            font-size: nth($font-size,3);
+                            border: solid 1px;
+                            list-style: none;
+                            li{
+                                margin: 10px;
+                            }
+                        }
                     }
                     .himagen2{
-                        width: 45%;
+                        width: 35%;
                         @extend %verticalFlex;
+                        ul{
+                            font-size: nth($font-size,3);
+                            border: solid 1px;
+                            list-style: none;
+                            li{
+                                margin: 10px;
+                            }
+                        }
                     }
                 }
             }

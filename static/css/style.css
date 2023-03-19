@@ -45,10 +45,12 @@
       .full-page main .main-section .desarrollo .imagenes-vertical {
         margin: 10px;
         height: auto;
-        text-align: center; }
+        text-align: center;
+        margin: 50px 0 50px 0; }
         .full-page main .main-section .desarrollo .imagenes-vertical .vimagen1 {
           width: auto;
-          height: 100%; }
+          height: 100%;
+          margin-bottom: 30px; }
           .full-page main .main-section .desarrollo .imagenes-vertical .vimagen1 img {
             width: 100%; }
         .full-page main .main-section .desarrollo .imagenes-vertical .vimagen2 {
@@ -58,10 +60,23 @@
             width: 100%; }
       .full-page main .main-section .desarrollo .imagenes-horizontal {
         width: 100%;
-        height: 300px;
+        height: auto;
         display: flex;
-        justify-content: space-around; }
+        justify-content: space-around;
+        margin: 100px  0 100px 0; }
         .full-page main .main-section .desarrollo .imagenes-horizontal .himagen1 {
-          width: 45%; }
+          width: 35%; }
+          .full-page main .main-section .desarrollo .imagenes-horizontal .himagen1 ul {
+            font-size: 30px;
+            border: solid 1px;
+            list-style: none; }
+            .full-page main .main-section .desarrollo .imagenes-horizontal .himagen1 ul li {
+              margin: 10px; }
         .full-page main .main-section .desarrollo .imagenes-horizontal .himagen2 {
-          width: 45%; }
+          width: 35%; }
+          .full-page main .main-section .desarrollo .imagenes-horizontal .himagen2 ul {
+            font-size: 30px;
+            border: solid 1px;
+            list-style: none; }
+            .full-page main .main-section .desarrollo .imagenes-horizontal .himagen2 ul li {
+              margin: 10px; }

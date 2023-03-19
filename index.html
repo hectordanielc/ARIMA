@@ -27,16 +27,12 @@
                 <div class="desarrollo">
                     <p>
                         Una descomposición de serie temporal es un método estadístico utilizado para separar una serie
-                        de tiempo en diferentes componentes, con el objetivo de analizar y comprender mejor su
-                        comportamiento y patrones. A continuación estaremos desglosando mediante el Método Clásico de
-                        Descomposición de Series Temporales el Índice Mensual de Actividad Económica (IMAE) de la
-                        República Dominicana.
+                        de tiempo en diferentes componentes con el objetivo facilitar el análisis de esta. En este resumen estare desglosando mediante el Método Clásico de Descomposición de Series Temporales el Índice Mensual de Actividad Económica (IMAE) de la República Dominicana.
                         <br><br>
                         Al mismo tiempo estaré compartiendo el código de Python utilizado para generar cada una de las
                         etapas de este análisis. En mis caso la data se estará extrayendo directamente desde la base de
                         datos de Yunque Capital (firma en que colaboro actualmente) para mayor facilidad en cuanto al
-                        filtrado y preparación de la data, pero la misma puede ser encontrada en el sitio web del Banco
-                        Central de la Rapública Dominicana (link en anexos). Empecemos.
+                        filtrado y preparación de la data, no obstante, estaré cargando un archivo de csv en el repositorio con la misma data utilizada. Igual, la información cruda puede ser encontrada en el sitio web del Banco Central de la Rapública Dominicana en la sección de Sector Monetario y Financiero. Empecemos extrayendo la data.
                     </p>
                     <div class="imagenes-vertical">
                         <div class="vimagen1">
@@ -49,8 +45,21 @@
                         </div>
                     </div>
                     <p>
-                        Una manera eficiente de observar este tipo de variables es separando la leyendo por períodos,
-                        por ejemplo:
+                        Este código conecta a la base de datos, crea un query, lo envía, almacena el resultado y se asegura de que la columan fechas tenga el formato adecuado. Como resultado tenemos una serie temporal cuya columna "Valor" se corresponde al IMAE. Grafiquemosla.
+                    </p>
+                    <div class="imagenes-vertical">
+                        <div class="vimagen1">
+                            <h2>Código</h2>
+                            <img src="./static/img/codigoplotimae.png" alt="Codigo de grafico">
+                        </div>
+                        <div class="vimagen2">
+                            <h2>Resultado</h2>
+                            <img src="./static/img/variableIMAE.png"
+                                alt="Resultado del Código">
+                        </div>
+                    </div>
+                    <p>
+                        Esta línea de código convierte la columna fehca en indice y pasa la información directamente para ser graficada. Sin embargo, el comportamiento de esta variable podría analizarse mejor si descomponemos el comportamiento de forma anual. Veamos.
                     </p>
                     <div class="imagenes-vertical">
                         <div class="vimagen1">
@@ -64,8 +73,7 @@
                         </div>
                     </div>
                     <p>
-                        A diferencia del 2020 (Año del COVID-19) se puede observar un comportamiento similar en en cada
-                        año.
+                        Este código crea un DataFrame con la columna Fecha como índice , agrega las columnas de año y mes y procede a generar el gráfico con los parámetros dados.Con este resultado podemos obaservar como a diferencia del 2020 (año del COVID-19) el comportamiento de la variable sigue un patron similar año a año.
                         <br><br>
                         El Método Clásico de Descomposición de Series Temporales se puede modelar con los métodos
                         Aditivo y Multiplicativo. Para determinar qué modelo utilizar se suelen tomar en cuenta las
@@ -76,36 +84,34 @@
                             <h2>Aditivo</h2>
                             <ul>
                                 <li>
-                                    Model’s form—𝑦𝑦(𝑡𝑡) = level + trend + seasonality + noise
+                                    1- Utiliza un modelo aditivo que descompone la serie temporal en cuatro componentes: nivel, tendencia, estacionalidad y ruido. Esto significa que separamos la serie temporal en estas cuatro partes y las analizamos por separado.
                                 </li>
                                 <li>
-                                    Linear model—changes over time are consistent in size
+                                    2- Asume que los cambios en la variable a lo largo del tiempo son consistentes en tamaño. Esto significa que la serie temporal cambia de manera constante, lo que es importante para que el modelo aditivo funcione correctamente.
                                 </li>
                                 <li>
-                                    he trend is linear (straight line)
+                                    3- Asume que la tendencia de la serie temporal es lineal, es decir, que sigue una línea recta. Esto es importante porque la tendencia representa la dirección general del cambio en la serie temporal, y si la tendencia no es lineal, puede ser difícil de modelar.
                                 </li>
                                 <li>
-                                    Linear seasonality with the same frequency (width) and amplitude (height) of cycles over time
+                                    4- Asume que la estacionalidad de la serie temporal es lineal, con la misma frecuencia y amplitud en cada ciclo. Esto significa que los patrones estacionales de la serie temporal tienen la misma duración y amplitud en cada ciclo, lo que facilita el modelado y la comprensión de la serie temporal.
+                                    <br><br><br><br><br><br><br><br><br><br>
                                 </li>
-                                <br>
                             </ul>
                         </div>
                         <div class="himagen2">
                             <h2>Multiplicativo</h2>
                             <ul>
                                 <li>
-                                    Model’s form—𝑦(t) = level * trend * seasonality * noise
+                                    1- La variabilidad de la serie aumenta o disminuye a medida que aumenta el nivel. Si la varianza de la serie temporal aumenta o disminuye a medida que aumenta el nivel, entonces puede ser apropiado utilizar un modelo multiplicativo. Un ejemplo de esto sería la inflación, donde la variabilidad de los precios aumenta a medida que aumenta el nivel de precios.
                                 </li>
                                 <li>
-                                    Non-linear model—changes over time are not consistent in size, for example,
-                                    exponential
+                                    2- La amplitud de la estacionalidad varía con el tiempo. Si la amplitud de la estacionalidad varía con el tiempo, entonces puede ser apropiado utilizar un modelo multiplicativo. Un ejemplo de esto sería la venta de juguetes, donde la amplitud de la estacionalidad varía según la época del año.
                                 </li>
                                 <li>
-                                    A curved, non-linear trend
+                                    3- La relación entre la media y la varianza de la serie es proporcional. Si la relación entre la media y la varianza de la serie es proporcional, entonces puede ser apropiado utilizar un modelo multiplicativo. Por ejemplo, en una serie de tiempo de producción, puede haber una relación proporcional entre la media y la varianza, donde una mayor producción conlleva una mayor variabilidad.
                                 </li>
                                 <li>
-                                    Non-linear seasonality with increasing/decreasing frequency and amplitude of cycles
-                                    over time
+                                    4- La serie temporal tiene una tendencia exponencial. Si la serie temporal tiene una tendencia exponencial, es decir, que el cambio a lo largo del tiempo es proporcional al nivel actual de la serie, entonces puede ser apropiado utilizar un modelo multiplicativo. Un ejemplo de esto sería la tasa de crecimiento de una población.
                                 </li>
                             </ul>
                         </div>
@@ -114,7 +120,7 @@
                         </div> -->
                     </div>
                     <p>
-                        Para decidir qué metodología tomar, evaluemos la el comportamiento del IMAE en conjunto con una media y una desviación estándar, ambas calculadas en base a los últimos 12 meses.
+                        Para decidir qué metodología tomar, evaluemos la el comportamiento del IMAE en conjunto con una media y una desviación estándar, ambas calculadas con una ventana móvil de 12 meses.
                     </p>
                     <div class="imagenes-vertical">
                         <div class="vimagen1">
@@ -127,7 +133,7 @@
                         </div>
                     </div>
                     <p>
-                        Obviando el comportamiento del COVID-19 se podrímos concluir que la variable tiene un comportamiento que puede ser analizado con un modelo aditivo. Veamos los resultados.
+                        Obviando el comportamiento del COVID-19 podrímos determinar que la variable tiene un comportamiento que puede ser analizado con un modelo aditivo. Veamos los resultados.
                     </p>
                     <div class="imagenes-vertical">
                         <div class="vimagen1">
@@ -140,7 +146,17 @@
                         </div>
                     </div>
                     <p>
-                        En este cuadro de descomposicion podemos observar por separado cada uno de los componentes: tendencia, estacionalidad y aliatoriedad (residuo). Podemos evaluar si la la descomposicion tiene sentido observando el componente de aliatoriedad. Viendo que no existe ningun patron podriamos concluir que el modelo se ajusta correctamente.
+                        En este cuadro de descomposición podemos observar por separado cada uno de los componentes: <br><br>
+                        <strong>Tendencia</strong> <br>
+                        La cual presenta un comportamiento claramente al alza. <br><br>
+                        <strong>Estacionalidad</strong> <br>
+                        Mostrando como se comporta esta variable en cada período y permitiendo analizar dónde se encuentra esta y cual sería su comportamiento esperado. <br><br>
+                        <strong>Aliatoriedad o Residuo</strong>  <br>
+                        Con este Podemos evaluar si la la descomposición resalizada por el modelo pudo arrojar un resultado coherente al evaluar si los mismo muestran o no algún patrón. De mostrar uno podríamos concluir que el modelo no pudo explicar correctamente la variable ya que estaría dando por valores aleatorios resultados que deberían agregar valor, de lo contrario (que a mi parecer es el caso), residuo no muestra ningún patrón legible, concluyendo así que el resultado es acertado.
+                    </p>
+                    <p>
+                        <br>
+                        Con esto concluimos la descomosición de serie temporal bajo el método aditivo al IMAE. Si deseas utilizar este código aquí te comparto el link del repositorio donde podras encontrar tanto el código de jupyter nootebook como el utilizado para generar toda la página web <a target="_blank" href="https://github.com/hectordanielc/time-series">https://github.com/hectordanielc/time-series</a>.
                     </p>
                 </div>
             </section>

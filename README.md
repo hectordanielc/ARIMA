@@ -1,7 +1,7 @@
 <h1 align="center">Hola soy Héctor Castro</h1>
 <h3 align="center">Un joven apasionado por las finanzas y la tecnología</h3>
 
-- 🔭 En este proyecto me encuentro trabajando en un **Analisis de series de tiempo**, cabe destacar que solo Python sería suficiente para esto pero me gusta integrar otros métodos para practicar.
+- 🔭 En este proyecto me encuentro trabajando en un **Analisis de series de tiempo**, cabe destacar que solo Python sería suficiente para esto pero me gusta integrar otros métodos para practicar. Estaré creando una versión estática en la rama principal y una versión utilizando Flask como backend para agregar un poco de dinamismo.
 
 - 👨‍💻 Todos mis proyectos públicos se en encuentra en [https://github.com/hectordanielc?tab=repositories](https://github.com/hectordanielc?tab=repositories)
 
