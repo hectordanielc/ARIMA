@@ -5,15 +5,28 @@
     nav{
         width:15%;
         background-color: $color-principal;
-        height: 100vh;
+        height: 100%;
         position: fixed;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
         div{
-            @extend %verticalFlex;
-            margin-top: 50px;
-            color: $color-secundario;
-            img{
-                width: 100%;
-                clip-path: circle();
+            a{
+                img{
+                    width: 50px;
+                    height: 50px;
+                    margin: 10px;
+                }
+            }
+            div{
+                @extend %verticalFlex;
+                margin-top: 50px;
+                color: $color-secundario;
+                img{
+                    width: 100%;
+                    clip-path: circle();
+                }
             }
         }
     }
@@ -26,6 +39,7 @@
                 height: 10vh;
                 margin: 10px;
                 border-radius: 10px;
+                text-align: center;
                 h1{
                     color: $color-secundario;
                 }
@@ -66,26 +80,29 @@
                     display: flex;
                     justify-content: space-around;
                     margin: 100px  0 100px 0;
+                    flex-wrap: wrap;
                     .himagen1{
-                        width: 35%;
+                        width: 40%;
                         @extend %verticalFlex;
                         
                         ul{
                             font-size: nth($font-size,3);
                             border: solid 1px;
                             list-style: none;
+                            height: 100%;
                             li{
                                 margin: 10px;
                             }
                         }
                     }
                     .himagen2{
-                        width: 35%;
+                        width: 40%;
                         @extend %verticalFlex;
                         ul{
                             font-size: nth($font-size,3);
                             border: solid 1px;
                             list-style: none;
+                            height: 100%;
                             li{
                                 margin: 10px;
                             }
