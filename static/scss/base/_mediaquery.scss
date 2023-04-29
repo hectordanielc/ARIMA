@@ -68,6 +68,22 @@
             }
         }
     }
+    .full-page{
+        flex-direction: column;
+        nav{
+            .nav1{
+                display: none;
+            }
+            .nav2{
+                display: block;
+            }
+        }
+        main{
+            .main-section{
+                margin-left: 0%;
+            }
+        }
+    }
 }
 
 @media screen and (max-width:680px){ 

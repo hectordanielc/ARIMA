@@ -3,28 +3,52 @@
 .full-page{
     display: flex;
     nav{
-        width:15%;
-        background-color: $color-principal;
-        height: 100%;
-        position: fixed;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        div{
-            a{
-                img{
-                    width: 50px;
-                    height: 50px;
-                    margin: 10px;
+        // background-color: $color-principal;
+        .nav1{
+            width:15%;
+            background-color: $color-principal;
+            height: 100%;
+            position: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            div{
+                a{
+                    width: 95%;
+                    margin: 3px;
+                    padding: 0px;
+                    font-size: nth($font-size,4);
+                    img{
+                        width: 50px;
+                        height: 50px;
+                        margin: 10px;
+                    }
+                }
+                div{
+                    @extend %verticalFlex;
+                    margin-top: 50px;
+                    color: $color-secundario;
+                    img{
+                        width: 100%;
+                        clip-path: circle();
+                    }
                 }
             }
-            div{
-                @extend %verticalFlex;
-                margin-top: 50px;
-                color: $color-secundario;
+        }
+        // .navbar-toggler{
+            // background-color: $color-principal;
+        // }
+        .nav2{
+            display: none;
+            height: 100%;
+            background-color: $color-principal;
+            .container-fluid{
+                background-color: $color-principal;
+                justify-content: space-between;
+                
                 img{
-                    width: 100%;
+                    width: 20%;
                     clip-path: circle();
                 }
             }

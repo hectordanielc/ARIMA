@@ -8,7 +8,7 @@
 /*Listas*/
 /*Tamaño utilizado en el menu*/
 /*Extend*/
-.full-page nav div div, .full-page main .main-section .titulo, .full-page main .main-section .desarrollo, .full-page main .main-section .desarrollo .imagenes-vertical, .full-page main .main-section .desarrollo .imagenes-horizontal .himagen1, .full-page main .main-section .desarrollo .imagenes-horizontal .himagen2 {
+.full-page nav .nav1 div div, .full-page main .main-section .titulo, .full-page main .main-section .desarrollo, .full-page main .main-section .desarrollo .imagenes-vertical, .full-page main .main-section .desarrollo .imagenes-horizontal .himagen1, .full-page main .main-section .desarrollo .imagenes-horizontal .himagen2 {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,7 +18,7 @@
 /*--------------------MAIN----------------------*/
 .full-page {
   display: flex; }
-  .full-page nav {
+  .full-page nav .nav1 {
     width: 15%;
     background-color: #092e4b;
     height: 100%;
@@ -27,15 +27,30 @@
     flex-direction: column;
     align-items: center;
     text-align: center; }
-    .full-page nav div a img {
-      width: 50px;
-      height: 50px;
-      margin: 10px; }
-    .full-page nav div div {
+    .full-page nav .nav1 div a {
+      width: 95%;
+      margin: 3px;
+      padding: 0px;
+      font-size: 15px; }
+      .full-page nav .nav1 div a img {
+        width: 50px;
+        height: 50px;
+        margin: 10px; }
+    .full-page nav .nav1 div div {
       margin-top: 50px;
       color: white; }
-      .full-page nav div div img {
+      .full-page nav .nav1 div div img {
         width: 100%;
+        clip-path: circle(); }
+  .full-page nav .nav2 {
+    display: none;
+    height: 100%;
+    background-color: #092e4b; }
+    .full-page nav .nav2 .container-fluid {
+      background-color: #092e4b;
+      justify-content: space-between; }
+      .full-page nav .nav2 .container-fluid img {
+        width: 20%;
         clip-path: circle(); }
   .full-page main .main-section {
     margin-left: 15%; }
@@ -142,7 +157,15 @@
   .imagenes-horizontal .himagen1 ul {
     width: 500px; }
   .imagenes-horizontal .himagen2 ul {
-    width: 500px; } }
+    width: 500px; }
+  .full-page {
+    flex-direction: column; }
+    .full-page nav .nav1 {
+      display: none; }
+    .full-page nav .nav2 {
+      display: block; }
+    .full-page main .main-section {
+      margin-left: 0%; } }
 
 @media screen and (max-width: 680px) {
   .imagenes-horizontal .himagen1 ul {
