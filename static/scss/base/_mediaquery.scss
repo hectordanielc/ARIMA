@@ -99,6 +99,48 @@
                     p{
                         font-size: nth($font-size,4);
                     }
+                    .imagenes-horizontal{
+                        .himagen1{
+                            ul{
+                                width: 375px;
+                                li{
+                                    font-size: nth($font-size,4);
+                                }
+                            }
+                        }
+                        .himagen2{
+                            ul{
+                                width: 375px;
+                                li{
+                                    font-size: nth($font-size,4);
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width:380px){ 
+    .full-page{
+        main{
+            .main-section{
+                .desarrollo{
+                    .imagenes-horizontal{
+                        .himagen1{
+                            ul{
+                                width: 300px;
+                            }
+                        }
+                        .himagen2{
+                            ul{
+                                width: 300px;
+                            }
+                        }
+                    }
                 }
             }
         }

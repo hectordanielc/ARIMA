@@ -94,7 +94,7 @@
         .full-page main .main-section .desarrollo .imagenes-horizontal .himagen1 {
           width: 40%; }
           .full-page main .main-section .desarrollo .imagenes-horizontal .himagen1 ul {
-            font-size: 15px;
+            font-size: 30px;
             border: solid 1px;
             list-style: none;
             height: 100%; }
@@ -103,7 +103,7 @@
         .full-page main .main-section .desarrollo .imagenes-horizontal .himagen2 {
           width: 40%; }
           .full-page main .main-section .desarrollo .imagenes-horizontal .himagen2 ul {
-            font-size: 15px;
+            font-size: 30px;
             border: solid 1px;
             list-style: none;
             height: 100%; }
@@ -173,4 +173,18 @@
   .full-page main .main-section .titulo h1 {
     font-size: 20px; }
   .full-page main .main-section .desarrollo p {
-    font-size: 15px; } }
+    font-size: 15px; }
+  .full-page main .main-section .desarrollo .imagenes-horizontal .himagen1 ul {
+    width: 375px; }
+    .full-page main .main-section .desarrollo .imagenes-horizontal .himagen1 ul li {
+      font-size: 15px; }
+  .full-page main .main-section .desarrollo .imagenes-horizontal .himagen2 ul {
+    width: 375px; }
+    .full-page main .main-section .desarrollo .imagenes-horizontal .himagen2 ul li {
+      font-size: 15px; } }
+
+@media screen and (max-width: 380px) {
+  .full-page main .main-section .desarrollo .imagenes-horizontal .himagen1 ul {
+    width: 300px; }
+  .full-page main .main-section .desarrollo .imagenes-horizontal .himagen2 ul {
+    width: 300px; } }

@@ -110,9 +110,8 @@
                     .himagen1{
                         width: 40%;
                         @extend %verticalFlex;
-                        
                         ul{
-                            font-size: nth($font-size,4);
+                            font-size: nth($font-size,3);
                             border: solid 1px;
                             list-style: none;
                             height: 100%;
@@ -125,7 +124,7 @@
                         width: 40%;
                         @extend %verticalFlex;
                         ul{
-                            font-size: nth($font-size,4);
+                            font-size: nth($font-size,3);
                             border: solid 1px;
                             list-style: none;
                             height: 100%;
