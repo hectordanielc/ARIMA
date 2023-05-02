@@ -86,16 +86,20 @@
     }
 }
 
-@media screen and (max-width:680px){ 
-    .imagenes-horizontal{
-        .himagen1{
-            ul{
-                width: 400px;
-            }
-        }
-        .himagen2{
-            ul{
-                width: 400px;
+@media screen and (max-width:600px){ 
+    .full-page{
+        main{
+            .main-section{
+                .titulo{
+                    h1{
+                        font-size: nth($font-size,1);
+                    }
+                }
+                .desarrollo{
+                    p{
+                        font-size: nth($font-size,4);
+                    }
+                }
             }
         }
     }

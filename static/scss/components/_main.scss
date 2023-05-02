@@ -43,6 +43,8 @@
             display: none;
             height: 100%;
             background-color: $color-principal;
+            text-align: center;
+            font-size: nth($font-size,1);
             .container-fluid{
                 background-color: $color-principal;
                 justify-content: space-between;
@@ -110,7 +112,7 @@
                         @extend %verticalFlex;
                         
                         ul{
-                            font-size: nth($font-size,3);
+                            font-size: nth($font-size,4);
                             border: solid 1px;
                             list-style: none;
                             height: 100%;
@@ -123,7 +125,7 @@
                         width: 40%;
                         @extend %verticalFlex;
                         ul{
-                            font-size: nth($font-size,3);
+                            font-size: nth($font-size,4);
                             border: solid 1px;
                             list-style: none;
                             height: 100%;
