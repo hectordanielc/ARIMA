@@ -62,21 +62,21 @@
                 </div>
                 <div class="desarrollo">
                     <p>
-                        En general catalogamos una serie temporal como estacionaria cuando sus estadísticos no cambian
+                        En general, catalogamos una serie temporal como estacionaria cuando sus estadísticos no cambian
                         con el tiempo. Esto implica que la media, la varianza y la covarianza de la serie temporal no
                         cambian con el tiempo. En otras palabras, la serie temporal no tiene tendencia ni
                         estacionalidad. Sin embargo, en la práctica, es difícil encontrar una serie temporal que sea
                         completamente estacionaria. Por lo tanto, es más común encontrar series temporales que son
                         estacionarias en promedio, pero que tienen tendencias y estacionalidades en el corto plazo. En
-                        este artículo, veremos cómo podemos determinar si una serie temporal es estacionaria o no, y
-                        cómo podemos transformar una serie temporal no estacionaria en una estacionaria.
+                        este artículo, veremos como podemos determinar si una serie temporal es estacionaria o no, y
+                        como podemos transformar una serie temporal no estacionaria en una estacionaria.
                         <br><br>
                         Iniciemos importando las librerías necesarias para el análisis de la serie temporal y extrayendo
                         la data desde la base de datos de Yunque Capital (firma en que colaboro actualmente), para mayor
-                        facilidad en cuanto al filtrado y preparación de la data, no obstante, estaré cargando un
+                        facilidad en cuanto al filtrado y preparación de la data. No obstante, estaré cargando un
                         archivo .csv en el repositorio con la misma data utilizada. Igual, la información cruda puede
                         ser encontrada en el sitio web del Banco Central de la República Dominicana en la sección de
-                        Sector Monetario y Financiero. Empecemos extrayendo la data.
+                        Sector Monetario y Financiero. Empecemos extrayendo la data:
                     </p>
                     <div class="imagenes-vertical">
                         <div class="vimagen1">
@@ -91,7 +91,7 @@
                     <p>
                         Este código conecta a la base de datos, crea un query, lo envía, almacena el resultado y se
                         asegura de que la columna "Fecha" tenga el formato adecuado. Como resultado tenemos una serie
-                        temporal cuya columna "Valor" se corresponde al IMAE. Grafiquémosla.
+                        temporal cuya columna "Valor" se corresponde al IMAE. Grafiquémosla:
                     </p>
                     <div class="imagenes-vertical">
                         <div class="vimagen1">
@@ -120,20 +120,18 @@
                         una columna con el año y otra con el mes, y luego graficar el comportamiento de la variable en
                         cada uno de estos períodos.
                         <br><br>
-                        Luego de graficar la serie temporal, podemos ver que la serie temporal tiene una tendencia
-                        creciente, lo que significa que la media de la serie temporal no es constante a lo largo del
-                        tiempo. Además, la serie temporal tiene una estacionalidad anual, lo que significa que la media
-                        de la serie temporal cambia con el tiempo. Por lo tanto, la serie temporal a simple vista no es
-                        estacionaria. Pero ¿cómo podemos determinar si una serie temporal es estacionaria o no? Para
-                        esto, podemos utilizar el test de Dickey-Fuller. Este test es un test estadístico que nos
+                        Luego de graficar la serie temporal, podemos ver que esta tiene una tendencia
+                        creciente, lo que significa que su media no es constante a lo largo del
+                        tiempo. Además, la serie temporal tiene una estacionalidad anual, lo que significa que su media
+                        cambia con el tiempo. Por lo tanto, a simple vista esta serie no es
+                        estacionaria. Pero ¿Cómo podemos determinar si una serie temporal es estacionaria o no? Para
+                        esto, podemos utilizar el test de Dickey-Fuller. Este es un test estadístico que nos
                         permite determinar si una serie temporal es estacionaria o no. El test de Dickey-Fuller tiene
                         dos hipótesis nula y alternativa:
                         <br><br>
-                        <b>Hipótesis nula (Ho):</b> La serie temporal tiene una raíz unitaria, lo que significa que la
-                        serie temporal no es estacionaria.
+                        <b>Hipótesis nula (Ho):</b> La serie temporal tiene una raíz unitaria, lo que significa que esta no es estacionaria.
                         <br><br>
-                        <b>Hipótesis alternativa (Ha):</b> La serie temporal no tiene una raíz unitaria, lo que
-                        significa que la serie temporal es estacionaria.
+                        <b>Hipótesis alternativa (Ha):</b> La serie temporal no tiene una raíz unitaria, lo que significa que es estacionaria.
                         <br><br>
                         El test de Dickey-Fuller tiene un valor p que nos permite determinar si rechazamos o no la
                         hipótesis nula. Si el valor p es menor que un umbral predefinido (por ejemplo, 0.05), rechazamos
@@ -158,11 +156,10 @@
                         , por lo que no podemos rechazar la hipótesis nula de que la serie temporal tiene una raíz
                         unitaria. Por lo tanto, podemos concluir que la serie temporal no es estacionaria.
                         <br><br>
-                        También podríamos utilizar el test de KPSS, el cual es muy utilizado como complemento del test
-                        de Dickey-Fuller. Mientras que el test de Dickey-Fuller se utiliza para probar si una serie de
-                        tiempo tiene una raíz unitaria, lo que indica que la serie no es estacionaria, el test de KPSS
-                        se utiliza para probar si la serie es estacionaria en media y varianza. En general, se utilizan
-                        ambos tests en conjunto para obtener una mejor comprensión de la estacionariedad de una serie de
+                        También podríamos trabajar con el test de KPSS, el cual es muy utilizado como complemento del test
+                        de Dickey-Fuller, pues mientras este último se utiliza para probar si una serie de
+                        tiempo tiene una raíz unitaria, el de KPSS se utiliza para probar si la serie es estacionaria
+                        en media y varianza. En general, se utilizan ambos tests en conjunto para obtener una mejor comprensión de la estacionariedad de una serie de
                         tiempo. A diferencia de Dickey-Fuller en el test KPSS, la hipótesis nula es que la serie
                         temporal es estacionaria. Si el p-value obtenido en el test es menor que el nivel de
                         significancia elegido, se rechaza la hipótesis nula y se concluye que la serie no es
@@ -184,19 +181,19 @@
                         Este código nos devuelve el valor p del test de KPSS. Como podemos ver, el Test Estadístico
                         (2.005) es mayor que cualquier valor crítico que tomemos (0.74, 0.46 y 0.35), por lo que
                         rechazamos la hipótesis nula de que la serie temporal es estacionaria. Por lo tanto, podemos
-                        concluir que la serie temporal no es estacionaria. Podríamos lelgar a la misma conclusión con el
-                        valor p al ver que este es menor que cualquierquiera de los 3 niveles de significancia que
+                        concluir que la serie temporal no es estacionaria. Podríamos llegar a la misma conclusión con el
+                        valor p al ver que este es menor que cualquiera de los 3 niveles de significancia que
                         tomemos (0.01, 0.05 y 0.1).
                         <br><br>
-                        Si bien es dificil encontrar una variable que sea estacionaria, es importante que sepamos cómo
+                        Si bien es difícil encontrar una variable que sea estacionaria, es importante que sepamos como
                         podemos determinar si una serie temporal es estacionaria o no. Esto es importante porque muchas
                         de las técnicas de modelado de series temporales asumen que la serie temporal es estacionaria.
-                        Por lo tanto, si la serie temporal no es estacionaria, es necesario transformarla para que sea
-                        estacionaria. ahora veamos cómo podemos transformar una serie temporal no estacionaria para que
+                        Por lo tanto, si la serie temporal no es estacionaria, es necesario transformarla para que lo sea.
+                        Ahora veamos como podemos transformar una serie temporal no estacionaria para que
                         sea estacionaria.
                         <br><br>
-                        Entre los métodos más comunes para transformar una serie temporal no estacionaria en una serie
-                        temporal estacionaria, se encuentran la diferenciación y la descomposición aditiva (desarrollada
+                        Entre los métodos más comunes para transformar una serie temporal no estacionaria en una estacionaria,
+                        se encuentran la diferenciación y la descomposición aditiva (desarrollada
                         en otro artículo). A continuación, veamos cómo podemos implementar el método de diferenciación
                         con la ayuda de Python:
                     </p>
@@ -238,15 +235,14 @@
                     <p>
                         Como podemos ver, el valor p del test de Dickey-Fuller (0.000) es menor que cualquier nivel de
                         significancia que tomemos (0.01, 0.05 y 0.1), por lo que rechazamos la hipótesis nula de que la
-                        serie temporal tiene una raíz unitaria. Por lo tanto, podemos concluir que la serie temporal es
+                        serie temporal tiene una raíz unitaria. Por lo tanto, podemos concluir que esta es
                         estacionaria. También podemos ver que el valor p del test de KPSS (0.861) es mayor que cualquier
                         nivel de significancia que tomemos, por lo que no podemos rechazar la hipótesis nula de que la
-                        serie temporal es estacionaria. Por lo tanto, podemos concluir que la serie temporal es
-                        estacionaria.
+                        serie temporal es estacionaria. Por lo tanto, podemos concluir nuevamente que esta es estacionaria.
                         <br><br>
-                        En este artículo, hemos repasado cómo podemos determinar si una serie temporal es estacionaria o
-                        no. También cómo podemos transformar una serie temporal no estacionaria en una serie temporal
-                        estacionaria.
+                        En este artículo, hemos repasado como podemos determinar si una serie temporal es estacionaria o
+                        no. También como podemos transformar una serie temporal no estacionaria en una serie temporal
+                        estacionaria. Al final de la página, se encuentra el código completo de este artículo.
                         <br><br>
                         <a target="_blank"
                             href="https://github.com/hectordanielc/time-series">https://github.com/hectordanielc/time-series</a>
